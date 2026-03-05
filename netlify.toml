@@ -1,21 +1,7 @@
 [build]
   publish = "."
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-```
-
-**2. In Netlify — Site Configuration → Build & Deploy → Build Settings**
-
-Make sure it shows:
-```
-Build command:     (blank — absolutely nothing)
-Publish directory: (blank or .)

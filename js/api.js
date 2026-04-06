@@ -25,6 +25,25 @@ async function fetchPosts(count = 10) {
   } catch(e) { return { error: e.message }; }
 }
 
+async function fetchPostBySlug(slug) {
+  try {
+    const res = await fetch(`${WP_API}/posts?slug=${encodeURIComponent(slug)}&_embed`);
+    if (!res.ok) throw new Error('API unreachable');
+    const data = await res.json();
+    if (!data.length) return { error: 'Post not found' };
+    const p = data[0];
+    return {
+      id: p.id, slug: p.slug,
+      title: cleanText(p.title.rendered),
+      excerpt: cleanText(p.excerpt.rendered),
+      content: p.content.rendered,
+      date: new Date(p.date).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}),
+      tag: p._embedded?.['wp:term']?.[0]?.[0]?.name || 'Essay',
+      link: p.link
+    };
+  } catch(e) { return { error: e.message }; }
+}
+
 function renderPostList(containerId, posts) {
   const el = document.getElementById(containerId);
   if (!el) return;
@@ -34,7 +53,7 @@ function renderPostList(containerId, posts) {
   }
   if (!posts.length) { el.innerHTML = '<p style="color:var(--muted)">No posts yet.</p>'; return; }
   el.innerHTML = posts.map(p => `
-    <a href="${p.link}" target="_blank" rel="noopener" class="post-item">
+    <a href="/blog/post/?slug=${encodeURIComponent(p.slug)}" class="post-item">
       <div class="post-body">
         <div class="post-tag"><span class="tag">${p.tag}</span></div>
         <h3 class="post-title">${p.title}</h3>

@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-  <nav id="nav"><div class="nav-inner">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
     <a href="/" class="nav-logo">Christine F. Walker</a>
     <div class="nav-links">
       <a href="/" class="nav-link">Home</a>
       <a href="/blog" class="nav-link">Blog</a>
       <a href="/works" class="nav-link">Works</a>
-      <a href="/start" class="nav-link active">Start Here</a>
+      <a href="/start" class="nav-link active" aria-current="page">Start Here</a>
       <a href="/contact" class="nav-link">Contact</a>
     </div>
   </div></nav>
+  <main id="main-content">
   <div style="padding:140px 32px 100px">
     <div class="form-wrap">
       <p class="eyebrow">Let's Begin</p>
@@ -24,12 +26,12 @@
       <p class="page-sub">Tell me about what you're building. I'll read every word and reply within 48 hours.</p>
       <form name="start-project" method="POST" data-netlify="true" action="/thank-you">
         <input type="hidden" name="form-name" value="start-project" />
-        <div class="form-field"><label class="form-label">Your name *</label><input type="text" name="name" class="form-input" required /></div>
-        <div class="form-field"><label class="form-label">Email address *</label><input type="email" name="email" class="form-input" required /></div>
-        <div class="form-field"><label class="form-label">What are you working on? *</label><textarea name="project" class="form-textarea" rows="4" required></textarea></div>
+        <div class="form-field"><label class="form-label" for="start-name">Your name *</label><input type="text" name="name" id="start-name" class="form-input" required /></div>
+        <div class="form-field"><label class="form-label" for="start-email">Email address *</label><input type="email" name="email" id="start-email" class="form-input" required /></div>
+        <div class="form-field"><label class="form-label" for="start-project">What are you working on? *</label><textarea name="project" id="start-project" class="form-textarea" rows="4" required></textarea></div>
         <div class="form-field">
-          <label class="form-label">What kind of support?</label>
-          <select name="support" class="form-select">
+          <label class="form-label" for="start-support">What kind of support?</label>
+          <select name="support" id="start-support" class="form-select">
             <option value="">Select…</option>
             <option>Facilitation / Workshops</option>
             <option>Campaign strategy</option>
@@ -38,7 +40,7 @@
             <option>Not sure yet — let's talk</option>
           </select>
         </div>
-        <div class="form-field"><label class="form-label">Anything else?</label><textarea name="notes" class="form-textarea" rows="3"></textarea></div>
+        <div class="form-field"><label class="form-label" for="start-notes">Anything else?</label><textarea name="notes" id="start-notes" class="form-textarea" rows="3"></textarea></div>
         <button type="submit" class="btn btn-dark btn-full">Send My Inquiry →</button>
       </form>
       <div style="margin-top:72px">
@@ -49,6 +51,7 @@
       </div>
     </div>
   </div>
+  </main>
   <div id="footer-placeholder"></div>
   <script src="/js/data.js"></script>
   <script src="/js/api.js"></script>

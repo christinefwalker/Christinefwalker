@@ -7,28 +7,31 @@
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-  <nav id="nav"><div class="nav-inner">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
     <a href="/" class="nav-logo">Christine F. Walker</a>
     <div class="nav-links">
       <a href="/" class="nav-link">Home</a>
       <a href="/blog" class="nav-link">Blog</a>
       <a href="/works" class="nav-link">Works</a>
       <a href="/start" class="nav-link">Start Here</a>
-      <a href="/contact" class="nav-link active">Contact</a>
+      <a href="/contact" class="nav-link active" aria-current="page">Contact</a>
     </div>
   </div></nav>
+  <main id="main-content">
   <div style="max-width:640px;margin:0 auto;padding:140px 32px 100px">
     <p class="eyebrow">Get in Touch</p>
     <h1 class="page-title">Contact</h1>
     <p class="page-sub">For general questions, press, or anything that doesn't fit the intake form.</p>
     <form name="contact" method="POST" data-netlify="true" action="/thank-you">
       <input type="hidden" name="form-name" value="contact" />
-      <div class="form-field"><label class="form-label">Name *</label><input type="text" name="name" class="form-input" required /></div>
-      <div class="form-field"><label class="form-label">Email *</label><input type="email" name="email" class="form-input" required /></div>
-      <div class="form-field"><label class="form-label">Message *</label><textarea name="message" class="form-textarea" rows="5" required></textarea></div>
+      <div class="form-field"><label class="form-label" for="contact-name">Name *</label><input type="text" name="name" id="contact-name" class="form-input" required /></div>
+      <div class="form-field"><label class="form-label" for="contact-email">Email *</label><input type="email" name="email" id="contact-email" class="form-input" required /></div>
+      <div class="form-field"><label class="form-label" for="contact-message">Message *</label><textarea name="message" id="contact-message" class="form-textarea" rows="5" required></textarea></div>
       <button type="submit" class="btn btn-dark btn-full">Send Message</button>
     </form>
   </div>
+  </main>
   <div id="footer-placeholder"></div>
   <script src="/js/data.js"></script>
   <script src="/js/api.js"></script>

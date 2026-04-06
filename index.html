@@ -13,11 +13,12 @@
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-  <nav id="nav">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav id="nav" aria-label="Main navigation">
     <div class="nav-inner">
       <a href="/" class="nav-logo">Christine F. Walker</a>
       <div class="nav-links">
-        <a href="/" class="nav-link active">Home</a>
+        <a href="/" class="nav-link active" aria-current="page">Home</a>
         <a href="/blog" class="nav-link">Blog</a>
         <a href="/works" class="nav-link">Works</a>
         <a href="/start" class="nav-link">Start Here</a>
@@ -26,6 +27,7 @@
     </div>
   </nav>
 
+  <main id="main-content">
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grain"></div>
@@ -70,11 +72,13 @@
       <h2 class="newsletter-title">Notes on the work</h2>
       <p class="newsletter-sub">Occasional writing on facilitation, creative process, and building things that matter. No noise.</p>
       <div class="newsletter-form" id="newsletter-form">
-        <input type="email" id="nl-email" placeholder="your@email.com" class="nl-input" />
+        <label for="nl-email" class="sr-only">Email address</label>
+        <input type="email" id="nl-email" placeholder="your@email.com" class="nl-input" aria-label="Email address" />
         <button onclick="subscribeNewsletter()" class="nl-btn">Subscribe</button>
       </div>
     </div>
   </section>
+  </main>
 
   <div id="footer-placeholder"></div>
 

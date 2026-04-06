@@ -72,13 +72,13 @@ function renderFooter() {
   if (!el) return;
   const links = [['About','/about'],['Blog','/blog'],['Works','/works'],['Start Here','/start'],['Contact','/contact'],['Privacy','/privacy'],['Disclosures','/disclosures']];
   el.innerHTML = `
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-inner">
         <span class="footer-logo">Christine F. Walker</span>
-        <div class="footer-links">
+        <nav aria-label="Footer navigation" class="footer-links">
           ${links.map(([l,p])=>`<a href="${p}" class="footer-link">${l}</a>`).join('')}
-        </div>
-        <span class="footer-copy">© ${new Date().getFullYear()}</span>
+        </nav>
+        <span class="footer-copy">&copy; ${new Date().getFullYear()}</span>
       </div>
     </footer>`;
 }

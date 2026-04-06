@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-  <nav id="nav"><div class="nav-inner">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
     <a href="/" class="nav-logo">Christine F. Walker</a>
     <div class="nav-links">
       <a href="/" class="nav-link">Home</a>
-      <a href="/blog" class="nav-link active">Blog</a>
+      <a href="/blog" class="nav-link active" aria-current="page">Blog</a>
       <a href="/works" class="nav-link">Works</a>
       <a href="/start" class="nav-link">Start Here</a>
       <a href="/contact" class="nav-link">Contact</a>
     </div>
   </div></nav>
+  <main id="main-content">
   <div style="max-width:760px;margin:0 auto;padding:140px 32px 100px">
     <p class="eyebrow">Writing</p>
     <h1 class="page-title" style="margin-bottom:64px">The Blog</h1>
@@ -26,6 +28,7 @@
       <div class="skeleton-post"></div>
     </div>
   </div>
+  </main>
   <div id="footer-placeholder"></div>
   <script src="/js/data.js"></script>
   <script src="/js/api.js"></script>

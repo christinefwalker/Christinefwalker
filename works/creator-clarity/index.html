@@ -91,20 +91,39 @@
       const expanded = el.style.display !== 'none';
       if (!expanded) {
         el.style.display = 'block';
-        btn.textContent = 'Hide Questions ↑';
+        btn.textContent = 'Hide Preview ↑';
         btn.setAttribute('aria-expanded', 'true');
-        el.innerHTML = [1,2].map(part => `
+        const part1Preview = QUESTIONS.filter(q=>q.part===1).slice(0, 3);
+        const part2Preview = QUESTIONS.filter(q=>q.part===2).slice(0, 2);
+        const previewTotal = part1Preview.length + part2Preview.length;
+        const remaining = QUESTIONS.length - previewTotal;
+        el.innerHTML = `
           <div class="cc-part-header">
-            <p class="cc-part-label">${part===1?'Part One · Q01–08':'Part Two · Q09–15'}</p>
-            <p class="cc-part-title">${part===1?'Problem Discovery':'Solution Discovery'}</p>
+            <p class="cc-part-label">Part One · Q01–03</p>
+            <p class="cc-part-title">Problem Discovery — Preview</p>
           </div>
-          ${QUESTIONS.filter(q=>q.part===part).map(q=>`
+          ${part1Preview.map(q=>`
             <div class="cc-q">
               <p class="cc-q-num">Q${q.n}</p>
               <p class="cc-q-text">"${q.q}"</p>
               <p class="cc-q-why">↳ ${q.why}</p>
             </div>`).join('')}
-        `).join('');
+          <div class="cc-part-header">
+            <p class="cc-part-label">Part Two · Q09–10</p>
+            <p class="cc-part-title">Solution Discovery — Preview</p>
+          </div>
+          ${part2Preview.map(q=>`
+            <div class="cc-q">
+              <p class="cc-q-num">Q${q.n}</p>
+              <p class="cc-q-text">"${q.q}"</p>
+              <p class="cc-q-why">↳ ${q.why}</p>
+            </div>`).join('')}
+          <div class="cc-q" style="text-align:center;padding:28px 16px;border-top:1px solid rgba(0,0,0,0.06)">
+            <p style="font-family:var(--ff);font-size:17px;line-height:1.5;margin-bottom:6px">+ ${remaining} more questions inside the full guide</p>
+            <p style="font-size:13px;color:var(--muted);line-height:1.6">Download the free PDF to unlock all 15 questions with strategic context for each.</p>
+            <a href="#reg-card" style="display:inline-block;margin-top:14px;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--accent,#333);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px">Get the Full Guide →</a>
+          </div>
+        `;
       } else {
         el.style.display = 'none';
         btn.textContent = 'Preview the 15 Questions ↓';

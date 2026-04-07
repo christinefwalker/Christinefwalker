@@ -6,16 +6,20 @@ const WORKS = [
     year: "2024",
     tag: "Brand & Community",
     heroColor: "linear-gradient(135deg, #D4C5B0, #F5F2ED)",
-    desc: "A soulful pet lifestyle brand built around desert culture, slow mornings, and dogs who know something we don't.",
+    externalUrl: "https://playapuppy.com",
+    cardImage: "/images/playa-puppy-beach.svg",
+    desc: "Plan your next trip with your pet. Playa Puppy helps travelers find dog-friendly beaches and coastal destinations across the U.S. and Latin America — because your pet is part of the plan.",
     outcomes: ["Brand identity system","Community content strategy","Launch campaign across social + email","250% over newsletter goal at launch"]
   },
   {
     slug: "sacred-space",
-    title: "Sacred Space",
-    year: "2023",
+    title: "Sacred Space Studios",
+    year: "2026",
     tag: "Campaign & Facilitation",
     heroColor: "linear-gradient(135deg, #C9BFD4, #F5F2ED)",
-    desc: "A campaign for a boutique wellness studio that needed to articulate something ineffable: the feeling of arriving home in your own body.",
+    externalUrl: "https://sacredspacestudios.net",
+    cardImage: "/images/sacred-space-logo.svg",
+    desc: "A professional content creation facility in Tampa Bay with five production-ready studios, shared equipment, and a creative community for podcasters, videographers, and content creators.",
     outcomes: ["Messaging framework + brand voice","6-week campaign across digital + print","4 team alignment workshops","Sold out retreat within 72 hrs of launch"]
   },
   {
@@ -24,6 +28,7 @@ const WORKS = [
     year: "2025",
     tag: "Framework & Media",
     heroColor: "linear-gradient(135deg, #BFC9D4, #D4C5E0, #F5F2ED)",
+    cardImage: "/images/creator-clarity-card.svg",
     badge: "Free PDF",
     desc: "A 15-question interview framework for extracting story, strategy, and positioning from entrepreneurs. Published through Squirrel Media.",
     outcomes: ["15-question diagnostic framework","Problem → Story → Solution → Outcome arc","Free downloadable PDF for registrants","Built for podcasters, creators & facilitators"]

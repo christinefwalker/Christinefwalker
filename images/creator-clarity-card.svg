@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <rect width="400" height="240" fill="none"/>
+
+  <!-- Stylized document/blueprint icon -->
+  <g transform="translate(200,72)">
+    <!-- Outer page shape -->
+    <rect x="-36" y="-48" width="72" height="96" rx="4" fill="none" stroke="#8B7355" stroke-width="1.5"/>
+    <!-- Corner fold -->
+    <path d="M 18,-48 L 36,-48 L 36,-30 Z" fill="none" stroke="#8B7355" stroke-width="1.2"/>
+    <line x1="18" y1="-48" x2="18" y2="-30" stroke="#8B7355" stroke-width="1"/>
+    <line x1="18" y1="-30" x2="36" y2="-30" stroke="#8B7355" stroke-width="1"/>
+    <!-- Question lines -->
+    <line x1="-22" y1="-28" x2="6" y2="-28" stroke="#C4A882" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-22" y1="-16" x2="12" y2="-16" stroke="#C4A882" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    <line x1="-22" y1="-4" x2="0" y2="-4" stroke="#C4A882" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+    <!-- Divider -->
+    <line x1="-22" y1="8" x2="22" y2="8" stroke="#8B7355" stroke-width="0.5" opacity="0.4"/>
+    <!-- Arrow arc: Problem → Outcome -->
+    <text x="-18" y="24" font-family="Helvetica Neue, Arial, sans-serif" font-size="7" fill="#6B6860" letter-spacing="0.08em">PROBLEM</text>
+    <text x="6" y="24" font-family="Helvetica Neue, Arial, sans-serif" font-size="7" fill="#C4A882">→</text>
+    <text x="14" y="24" font-family="Helvetica Neue, Arial, sans-serif" font-size="7" fill="#6B6860" letter-spacing="0.08em">OUTCOME</text>
+    <!-- Star/clarity symbol -->
+    <g transform="translate(0,38)">
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#C4A882" stroke-width="1.2"/>
+      <line x1="-5" y1="0" x2="5" y2="0" stroke="#C4A882" stroke-width="1.2"/>
+      <line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5" stroke="#C4A882" stroke-width="0.8"/>
+      <line x1="3.5" y1="-3.5" x2="-3.5" y2="3.5" stroke="#C4A882" stroke-width="0.8"/>
+    </g>
+  </g>
+
+  <!-- Title text -->
+  <text x="200" y="168" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1C1C1A" letter-spacing="0.03em">Creator Clarity</text>
+  <text x="200" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#1C1C1A" letter-spacing="0.03em">Blueprint</text>
+  <text x="200" y="212" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="9" fill="#6B6860" letter-spacing="0.18em">15 QUESTIONS · FREE PDF</text>
+</svg>

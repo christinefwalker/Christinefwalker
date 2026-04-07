@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <rect width="400" height="200" fill="none"/>
+  <!-- Lotus/sacred geometry icon -->
+  <g transform="translate(200,70)">
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#8B7355" stroke-width="1.5"/>
+    <!-- Petals -->
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(0)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(45)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(90)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(135)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(180)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(225)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(270)"/>
+    <ellipse cx="0" cy="-22" rx="10" ry="20" fill="none" stroke="#8B7355" stroke-width="1.2" transform="rotate(315)"/>
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="38" fill="none" stroke="#8B7355" stroke-width="1"/>
+  </g>
+  <!-- Text -->
+  <text x="200" y="140" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#1C1C1A" letter-spacing="0.05em">Sacred Space Studios</text>
+  <text x="200" y="165" text-anchor="middle" font-family="Helvetica Neue, Arial, sans-serif" font-size="10" fill="#6B6860" letter-spacing="0.2em" text-transform="uppercase">SACREDSPACESTUDIOS.NET</text>
+</svg>

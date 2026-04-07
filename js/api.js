@@ -68,10 +68,16 @@ function renderWorksGrid(containerId, limit) {
   const el = document.getElementById(containerId);
   if (!el) return;
   const items = limit ? WORKS.slice(0, limit) : WORKS;
-  el.innerHTML = items.map(w => `
-    <a href="/works/${w.slug}" class="work-card">
+  el.innerHTML = items.map(w => {
+    const href = w.externalUrl || `/works/${w.slug}`;
+    const target = w.externalUrl ? ' target="_blank" rel="noopener noreferrer"' : '';
+    const heroContent = w.cardImage
+      ? `<img src="${w.cardImage}" alt="${w.title}" class="work-card-img"/>`
+      : `<div class="grain"></div>`;
+    return `
+    <a href="${href}" class="work-card"${target}>
       <div class="work-card-hero" style="background:${w.heroColor}">
-        <div class="grain"></div>
+        ${heroContent}
         ${w.badge ? `<div class="work-card-badge">${w.badge}</div>` : ''}
         <div class="work-card-tag"><span class="tag">${w.tag}</span></div>
       </div>
@@ -81,9 +87,10 @@ function renderWorksGrid(containerId, limit) {
           <span class="work-card-year">${w.year}</span>
         </div>
         <p class="work-card-desc">${w.desc.slice(0,80)}…</p>
+        ${w.externalUrl ? `<span class="work-card-link">${w.externalUrl.replace('https://','')}</span>` : ''}
       </div>
-    </a>
-  `).join('');
+    </a>`;
+  }).join('');
 }
 
 function renderFooter() {

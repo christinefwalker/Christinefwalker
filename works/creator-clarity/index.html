@@ -46,14 +46,26 @@
           <p class="cc-sq-title">Build. Gather. Wander.</p>
           <p class="cc-sq-desc">Squirrel Media is a platform for location-independent creators to cultivate community and create from anywhere.</p>
         </div>
+        <div class="work-related-section" style="margin-top:48px">
+          <h2 class="work-section-title" style="margin-top:0">From the Blog</h2>
+          <div id="related-posts">
+            <div class="skeleton-post"></div>
+            <div class="skeleton-post"></div>
+          </div>
+        </div>
       </div>
       <div>
         <div class="cc-card" id="reg-card">
           <h2 class="cc-card-title">Get the free PDF guide</h2>
           <p class="cc-card-sub">All 15 questions + strategic purpose. Print-ready. Yours instantly.</p>
-          <div class="form-field"><label class="form-label" for="pdf-name">Name *</label><input type="text" id="pdf-name" class="form-input" required /></div>
-          <div class="form-field"><label class="form-label" for="pdf-email">Email *</label><input type="email" id="pdf-email" class="form-input" required /></div>
-          <button onclick="submitPDF()" class="btn btn-dark btn-full">Download PDF →</button>
+          <form name="pdf-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin:0">
+            <input type="hidden" name="form-name" value="pdf-download" />
+            <input type="hidden" name="form-label" value="New Lead — PDF Download" />
+            <p style="display:none"><label>Don't fill this: <input name="bot-field" /></label></p>
+            <div class="form-field"><label class="form-label" for="pdf-name">Name *</label><input type="text" name="name" id="pdf-name" class="form-input" required /></div>
+            <div class="form-field"><label class="form-label" for="pdf-email">Email *</label><input type="email" name="email" id="pdf-email" class="form-input" required /></div>
+            <button type="button" onclick="submitPDF()" class="btn btn-dark btn-full">Download PDF →</button>
+          </form>
           <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:12px">No spam. Just the guide.</p>
         </div>
         <div class="cc-checklist" style="margin-top:12px">
@@ -72,6 +84,7 @@
   <script src="/js/api.js"></script>
   <script>
     renderFooter();
+    fetchPosts(3).then(posts => renderPostList('related-posts', posts));
     function toggleQuestions() {
       const el = document.getElementById('questions-list');
       const btn = document.querySelector('.cc-toggle');
@@ -102,6 +115,17 @@
       const name = document.getElementById('pdf-name').value;
       const email = document.getElementById('pdf-email').value;
       if (!name || !email) return;
+      // Submit to Netlify Forms for lead capture
+      const formData = new URLSearchParams();
+      formData.append('form-name', 'pdf-download');
+      formData.append('form-label', 'New Lead — PDF Download');
+      formData.append('name', name);
+      formData.append('email', email);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
+      }).catch(function() {});
       document.getElementById('reg-card').innerHTML = `
         <div style="text-align:center;padding:16px 0">
           <p style="font-size:28px;margin-bottom:12px" aria-hidden="true">✦</p>

@@ -79,7 +79,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
 .work-card { background: var(--white); cursor: pointer; overflow: hidden; transition: opacity 0.2s; }
 .work-card:hover { opacity: 0.9; }
-.work-card-hero { height: 200px; position: relative; }
+.work-card-hero { height: 200px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.work-card-img { max-width: 80%; max-height: 160px; object-fit: contain; position: relative; z-index: 1; }
 .work-card-badge { position: absolute; top: 20px; right: 20px; background: var(--ink); color: var(--white); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; }
 .work-card-tag { position: absolute; bottom: 20px; left: 20px; }
 .work-card-body { padding: 22px 24px 26px; }
@@ -130,6 +131,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .outcome-text { font-family: var(--ff); font-size: 18px; line-height: 1.5; }
 .cta-box { margin-top: 64px; padding: 40px; background: var(--white); text-align: center; }
 .cta-box p { font-family: var(--ff); font-size: 22px; margin-bottom: 24px; }
+
+.work-card-link { display: inline-block; font-size: 11px; letter-spacing: 0.06em; color: var(--accent-dark); margin-top: 8px; }
+
+.work-detail-body { max-width: 760px; margin: 0 auto; padding: 64px 32px 100px; }
+.work-detail-content {}
+.work-intro { font-family: var(--ff); font-size: 20px; line-height: 1.75; margin-bottom: 20px; }
+.work-detail-content p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+.work-section-title { font-family: var(--ff); font-size: 24px; font-weight: 400; letter-spacing: -0.02em; margin: 48px 0 20px; }
+.work-image-feature { border-radius: 0; overflow: hidden; }
+.outcome-list { margin-bottom: 48px; }
+.work-visit-link { margin: 48px 0; }
+.work-related-section { margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border); }
 
 .cc-grid { display: grid; grid-template-columns: 1fr 320px; gap: 56px; align-items: start; max-width: 1040px; margin: 0 auto; padding: 64px 32px 100px; }
 .cc-arc { display: flex; align-items: center; background: var(--white); padding: 18px 24px; margin-bottom: 40px; flex-wrap: wrap; gap: 4px; }

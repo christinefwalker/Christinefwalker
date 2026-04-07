@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- Sky gradient -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="100%" stop-color="#E0F0FF"/>
+    </linearGradient>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5BA4CF"/>
+      <stop offset="100%" stop-color="#7EC8E3"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5E6C8"/>
+      <stop offset="100%" stop-color="#E8D5B0"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="400" height="120" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="320" cy="45" r="25" fill="#FFD700" opacity="0.8"/>
+  <!-- Clouds -->
+  <ellipse cx="80" cy="35" rx="30" ry="12" fill="white" opacity="0.7"/>
+  <ellipse cx="100" cy="30" rx="25" ry="10" fill="white" opacity="0.6"/>
+  <ellipse cx="250" cy="50" rx="22" ry="8" fill="white" opacity="0.5"/>
+  <!-- Ocean -->
+  <rect y="100" width="400" height="30" fill="url(#ocean)"/>
+  <!-- Waves -->
+  <path d="M0,110 Q20,105 40,110 Q60,115 80,110 Q100,105 120,110 Q140,115 160,110 Q180,105 200,110 Q220,115 240,110 Q260,105 280,110 Q300,115 320,110 Q340,105 360,110 Q380,115 400,110" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+  <!-- Sand -->
+  <rect y="125" width="400" height="75" fill="url(#sand)"/>
+  <!-- Palm tree -->
+  <rect x="55" y="60" width="6" height="80" fill="#8B6914" rx="3"/>
+  <path d="M58,62 Q40,40 20,50" stroke="#2E8B3A" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M58,62 Q75,38 95,48" stroke="#2E8B3A" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M58,62 Q50,35 35,38" stroke="#3A9B4A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M58,62 Q68,35 80,35" stroke="#3A9B4A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Beach umbrella -->
+  <rect x="297" y="110" width="3" height="50" fill="#C4A882"/>
+  <path d="M270,112 A30,20 0 0,1 330,112 Z" fill="#E07050"/>
+  <path d="M285,112 A15,18 0 0,1 300,96" fill="none" stroke="#C05040" stroke-width="1"/>
+  <path d="M315,112 A15,18 0 0,0 300,96" fill="none" stroke="#C05040" stroke-width="1"/>
+  <!-- Beagle dog on beach -->
+  <g transform="translate(180, 130)">
+    <!-- Body -->
+    <ellipse cx="0" cy="0" rx="22" ry="14" fill="#D4A055"/>
+    <!-- White belly -->
+    <ellipse cx="2" cy="5" rx="14" ry="8" fill="white"/>
+    <!-- Head -->
+    <circle cx="22" cy="-8" r="12" fill="#D4A055"/>
+    <!-- Beagle face markings -->
+    <path d="M18,-14 Q22,-20 26,-14" fill="#8B5E3C"/>
+    <circle cx="22" cy="-8" r="7" fill="white" opacity="0.6"/>
+    <!-- Ears (floppy) -->
+    <ellipse cx="13" cy="-6" rx="5" ry="10" fill="#8B5E3C" transform="rotate(-15 13 -6)"/>
+    <ellipse cx="31" cy="-6" rx="5" ry="10" fill="#8B5E3C" transform="rotate(15 31 -6)"/>
+    <!-- Eyes -->
+    <circle cx="19" cy="-9" r="2" fill="#1C1C1A"/>
+    <circle cx="25" cy="-9" r="2" fill="#1C1C1A"/>
+    <!-- Nose -->
+    <circle cx="22" cy="-5" r="2" fill="#1C1C1A"/>
+    <!-- Tail (wagging up) -->
+    <path d="M-20,0 Q-30,-15 -25,-22" stroke="#D4A055" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="-25" cy="-23" r="3" fill="white"/>
+    <!-- Legs -->
+    <rect x="-12" y="10" width="5" height="14" fill="#D4A055" rx="2"/>
+    <rect x="-2" y="10" width="5" height="14" fill="#D4A055" rx="2"/>
+    <rect x="8" y="10" width="5" height="14" fill="#D4A055" rx="2"/>
+    <rect x="16" y="10" width="5" height="14" fill="#D4A055" rx="2"/>
+    <!-- Paws (white) -->
+    <rect x="-13" y="22" width="7" height="4" fill="white" rx="2"/>
+    <rect x="-3" y="22" width="7" height="4" fill="white" rx="2"/>
+    <rect x="7" y="22" width="7" height="4" fill="white" rx="2"/>
+    <rect x="15" y="22" width="7" height="4" fill="white" rx="2"/>
+  </g>
+  <!-- Paw prints in sand -->
+  <g fill="#C4A882" opacity="0.4">
+    <circle cx="130" cy="155" r="3"/><circle cx="126" cy="150" r="1.5"/><circle cx="134" cy="150" r="1.5"/><circle cx="130" cy="148" r="1.5"/>
+    <circle cx="150" cy="165" r="3"/><circle cx="146" cy="160" r="1.5"/><circle cx="154" cy="160" r="1.5"/><circle cx="150" cy="158" r="1.5"/>
+  </g>
+  <!-- Seashell -->
+  <path d="M350,155 Q355,148 360,155 Q355,150 350,155Z" fill="#F0D0B0" stroke="#C4A882" stroke-width="0.5"/>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "christinefwalker site Netlify AI Prompt – Site Structure for christinefwalker.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinefwalker/Christinefwalker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinefwalker/Christinefwalker/issues"
+  },
+  "homepage": "https://github.com/christinefwalker/Christinefwalker#readme",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.4"
+  }
+}

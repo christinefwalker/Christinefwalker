@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Christine F. Walker</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
+    <a href="/" class="nav-logo">Christine F. Walker</a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/blog" class="nav-link active" aria-current="page">Blog</a>
+      <a href="/works" class="nav-link">Works</a>
+      <a href="/start" class="nav-link">Start Here</a>
+      <a href="/contact" class="nav-link">Contact</a>
+    </div>
+  </div></nav>
+  <main id="main-content">
+  <div style="max-width:760px;margin:0 auto;padding:140px 32px 100px">
+    <a href="/blog" class="back-link">← Back to Blog</a>
+    <div id="post-content">
+      <div class="skeleton-post"></div>
+      <div class="skeleton-post"></div>
+      <div class="skeleton-post"></div>
+    </div>
+  </div>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/js/data.js"></script>
+  <script src="/js/api.js"></script>
+  <script>
+    (async function() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+      const el = document.getElementById('post-content');
+      if (!slug) {
+        el.innerHTML = '<p style="color:var(--muted)">Post not found.</p>';
+        return;
+      }
+      const post = await fetchPostBySlug(slug);
+      if (post.error) {
+        el.innerHTML = '<p style="color:var(--muted)">Post not found.</p>';
+        return;
+      }
+      document.title = post.title + ' — Christine F. Walker';
+      el.innerHTML = `
+        <div class="post-tag" style="margin-bottom:16px"><span class="tag">${post.tag}</span></div>
+        <h1 class="page-title" style="margin-bottom:12px">${post.title}</h1>
+        <p style="color:var(--muted);font-size:13px;letter-spacing:0.06em;margin-bottom:48px">${post.date}</p>
+        <div class="article-content">${post.content}</div>
+      `;
+    })();
+    renderFooter();
+  </script>
+</body>
+</html>

@@ -177,6 +177,19 @@ footer { background: var(--white); border-top: 1px solid var(--border); padding:
 .simple-page h1 { font-family: var(--ff); font-size: 42px; font-weight: 400; letter-spacing: -0.03em; margin-bottom: 48px; }
 .simple-page p { font-size: 15px; line-height: 1.8; color: var(--muted); margin-bottom: 16px; }
 
+.article-content { font-family: var(--ff); font-size: 19px; line-height: 1.8; }
+.article-content p { margin-bottom: 28px; }
+.article-content h2 { font-size: 28px; font-weight: 400; letter-spacing: -0.02em; margin: 48px 0 20px; }
+.article-content h3 { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; margin: 40px 0 16px; }
+.article-content blockquote { border-left: 3px solid var(--accent); padding: 4px 0 4px 24px; margin: 32px 0; color: var(--muted); font-style: italic; }
+.article-content ul, .article-content ol { padding-left: 24px; margin-bottom: 28px; }
+.article-content li { margin-bottom: 8px; }
+.article-content img { max-width: 100%; height: auto; margin: 32px 0; }
+.article-content a { color: var(--accent-dark); text-decoration: underline; }
+.article-content a:hover { color: var(--ink); }
+.article-content figure { margin: 32px 0; }
+.article-content figcaption { font-family: var(--ffs); font-size: 13px; color: var(--muted); margin-top: 8px; }
+
 .form-success { text-align: center; padding: 80px 40px; background: var(--white); }
 .form-success h1, .form-success h3 { font-family: var(--ff); font-size: 28px; margin-bottom: 12px; font-weight: 400; }
 .form-success p { color: var(--muted); line-height: 1.7; }

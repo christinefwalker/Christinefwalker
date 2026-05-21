@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Christine F. Walker</title>
+  <title>Ecosystem — Christine F. Walker</title>
+  <meta name="description" content="The ecosystem of projects, brands, and creative ventures Christine Walker has built — connected through intentional environments and meaningful growth." />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
@@ -14,28 +15,22 @@
       <a href="/" class="nav-link">Home</a>
       <a href="/about" class="nav-link">About</a>
       <a href="/works" class="nav-link">The Works</a>
-      <a href="/ecosystem" class="nav-link">Ecosystem</a>
-      <a href="/blog" class="nav-link active" aria-current="page">Writing</a>
+      <a href="/ecosystem" class="nav-link active" aria-current="page">Ecosystem</a>
+      <a href="/blog" class="nav-link">Writing</a>
       <a href="/contact" class="nav-link">Collaborate</a>
     </div>
   </div></nav>
   <main id="main-content">
-  <div style="max-width:760px;margin:0 auto;padding:140px 32px 100px">
-    <p class="eyebrow">Writing</p>
-    <h1 class="page-title" style="margin-bottom:64px">The Blog</h1>
-    <div id="blog-posts">
-      <div class="skeleton-post"></div>
-      <div class="skeleton-post"></div>
-      <div class="skeleton-post"></div>
-    </div>
+  <div style="padding:140px 32px 100px;max-width:1100px;margin:0 auto">
+    <p class="eyebrow">The Ecosystem</p>
+    <h1 class="page-title">Projects & Ventures</h1>
+    <p class="page-sub">The brands, tools, and creative ventures I've built — each one connected through the belief that environment shapes people.</p>
+    <div class="card-grid" id="works-grid"></div>
   </div>
   </main>
   <div id="footer-placeholder"></div>
   <script src="/js/data.js"></script>
   <script src="/js/api.js"></script>
-  <script>
-    fetchPosts(20).then(posts => renderPostList('blog-posts', posts));
-    renderFooter();
-  </script>
+  <script>renderWorksGrid('works-grid'); renderFooter();</script>
 </body>
 </html>

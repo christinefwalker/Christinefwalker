@@ -4,13 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Christine F. Walker — Environment Shapes People</title>
-  <meta name="description" content="Christine Walker builds environments, relationships, and opportunities that help people move forward. Real estate, creative entrepreneurship, community, and intentional living." />
-  <meta property="og:title" content="Christine F. Walker" />
-  <meta property="og:description" content="I build environments, relationships, and opportunities that help people move forward." />
+  <title>Christine F. Walker — Financial Feminine Freedom Self-Assessment</title>
+  <meta name="description" content="A short self-assessment that helps you find your next chapter — remote income, a creative home base, or a tax-smart relocation. One clear starting point, then a direct path forward." />
+  <meta property="og:title" content="Financial Feminine Freedom Self-Assessment" />
+  <meta property="og:description" content="Answer a few questions and get pointed to the path that fits — career, creative, or relocation." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://christinefwalker.com" />
   <link rel="stylesheet" href="/css/style.css" />
+  <!-- GoHighLevel / LeadConnector external tracking -->
+  <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_86ec30b65a8c466daa4af1b42eb26058"></script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -20,8 +22,7 @@
       <div class="nav-links">
         <a href="/" class="nav-link active" aria-current="page">Home</a>
         <a href="/about" class="nav-link">About</a>
-        <a href="/works" class="nav-link">The Works</a>
-        <a href="/ecosystem" class="nav-link">Ecosystem</a>
+        <a href="/lifestyle" class="nav-link">Lifestyle Design</a>
         <a href="/blog" class="nav-link">Writing</a>
         <a href="/contact" class="nav-link">Collaborate</a>
       </div>
@@ -30,141 +31,131 @@
 
   <main id="main-content">
 
-  <!-- HERO -->
-  <section class="hero">
+  <!-- HERO + ASSESSMENT -->
+  <section class="hero hero-assess">
     <div class="hero-bg"></div>
     <div class="hero-grain"></div>
-    <div class="hero-content">
-      <p class="eyebrow">Connector · Strategist · Ecosystem Builder</p>
-      <h1 class="hero-title">Environment shapes people.</h1>
-      <p class="hero-thesis">I build environments, relationships, and opportunities that help people move forward — through real estate, creative entrepreneurship, community, and intentional living.</p>
-      <div class="btn-row">
-        <a href="/ecosystem" class="btn btn-dark">Explore Projects</a>
-        <a href="/contact" class="btn btn-outline">Collaborate →</a>
-      </div>
+    <div class="assess-intro">
+      <p class="eyebrow">Start Here · 60 Seconds</p>
+      <h1 class="hero-title">Find your next chapter.</h1>
+      <p class="hero-thesis">One short self-assessment. Tell me where you are, and I'll point you to the right path — a new way to earn remotely, a home base for your creative work, or a smarter place to live and invest.</p>
     </div>
-  </section>
 
-  <!-- WHAT I DO -->
-  <section class="section section-white">
-    <div class="container">
-      <p class="eyebrow">What I Do</p>
-      <h2 class="section-title" style="margin-bottom:56px">Three ways I create momentum.</h2>
-      <div class="wid-grid">
-        <div class="wid-col">
-          <span class="wid-accent"></span>
-          <h3>Strategic Connection</h3>
-          <p>Helping people, brands, and founders align with the right environments, opportunities, and collaborations.</p>
+    <div class="assess-wrap">
+      <!-- Netlify Forms detects this form at build time. Submission is sent via AJAX,
+           then the visitor is routed to the matching funnel. -->
+      <form
+        id="assessment-form"
+        name="assessment"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thank-you"
+      >
+        <input type="hidden" name="form-name" value="assessment" />
+        <input type="hidden" name="form-label" value="New Lead — Financial Feminine Freedom Self-Assessment" />
+        <input type="hidden" name="segment" id="assess-segment" value="" />
+        <input type="hidden" name="q1" value="" />
+        <input type="hidden" name="q2" value="" />
+        <input type="hidden" name="q3" value="" />
+        <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <div class="assess-card">
+          <div class="assess-progress" aria-hidden="true"><span class="assess-progress-bar" id="assess-progress-bar"></span></div>
+
+          <!-- STEP 1 -->
+          <div class="assess-step is-active" data-step="0">
+            <p class="assess-step-label">Question 1 of 3</p>
+            <h2 class="assess-question">What are you most ready to change right now?</h2>
+            <div class="assess-options" role="radiogroup" aria-label="What are you ready to change?">
+              <button type="button" class="assess-option" data-q="q1" data-segment="Catalyst" data-value="Trade corporate burnout for remote income I control">
+                <span class="assess-option-title">Trade corporate burnout for remote income</span>
+                <span class="assess-option-sub">I want flexible, location-independent earning I actually control.</span>
+              </button>
+              <button type="button" class="assess-option" data-q="q1" data-segment="Creator" data-value="Grow my creative or wellness work with real infrastructure">
+                <span class="assess-option-title">Grow my creative or wellness work</span>
+                <span class="assess-option-sub">I need professional space and infrastructure to scale what I make.</span>
+              </button>
+              <button type="button" class="assess-option" data-q="q1" data-segment="Relocation" data-value="Protect my wealth and relocate to a lower-tax life">
+                <span class="assess-option-title">Protect my wealth and relocate</span>
+                <span class="assess-option-sub">I want a tax-smarter, sunnier base for my life and investments.</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="assess-step" data-step="1">
+            <p class="assess-step-label">Question 2 of 3</p>
+            <h2 class="assess-question">Which best describes you?</h2>
+            <div class="assess-options" role="radiogroup" aria-label="Which best describes you?">
+              <button type="button" class="assess-option" data-q="q2" data-segment="Catalyst" data-value="Building a remote sales or success career with flexibility">
+                <span class="assess-option-title">In transition, building a remote career</span>
+                <span class="assess-option-sub">I want to learn high-value sales and client-success skills.</span>
+              </button>
+              <button type="button" class="assess-option" data-q="q2" data-segment="Creator" data-value="A creator, coach, or wellness practitioner">
+                <span class="assess-option-title">A creator, coach, or wellness practitioner</span>
+                <span class="assess-option-sub">I make content or hold space and want to do it professionally.</span>
+              </button>
+              <button type="button" class="assess-option" data-q="q2" data-segment="Relocation" data-value="A business owner or investor planning a move">
+                <span class="assess-option-title">A business owner or investor</span>
+                <span class="assess-option-sub">I'm planning a relocation and want to do it strategically.</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="assess-step" data-step="2">
+            <p class="assess-step-label">Question 3 of 3</p>
+            <h2 class="assess-question">What would a great next 12 months look like?</h2>
+            <div class="assess-options" role="radiogroup" aria-label="What would a great year look like?">
+              <button type="button" class="assess-option" data-q="q3" data-segment="Catalyst" data-value="Consistent remote income and new skills">
+                <span class="assess-option-title">Consistent remote income and new skills</span>
+                <span class="assess-option-sub">A real career path I can run from anywhere.</span>
+              </button>
+              <button type="button" class="assess-option" data-q="q3" data-segment="Creator" data-value="A studio home base and a steady community">
+                <span class="assess-option-title">A studio home base and steady clients</span>
+                <span class="assess-option-sub">Somewhere to create, gather, and grow consistently.</span>
+              </button>
+              <button type="button" class="assess-option" data-q="q3" data-segment="Relocation" data-value="A tax-smart relocation and the right property">
+                <span class="assess-option-title">A tax-smart move and the right property</span>
+                <span class="assess-option-sub">A clear plan to relocate and invest well.</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 4 — capture -->
+          <div class="assess-step" data-step="3">
+            <p class="assess-step-label">Last step</p>
+            <h2 class="assess-question">Where should I send your results?</h2>
+            <p class="assess-note" id="assess-summary">Based on your answers, I'll point you to the path that fits.</p>
+            <div class="assess-field">
+              <label class="form-label" for="assess-name">First name *</label>
+              <input type="text" name="name" id="assess-name" class="form-input" autocomplete="given-name" required />
+            </div>
+            <div class="assess-field">
+              <label class="form-label" for="assess-email">Email *</label>
+              <input type="email" name="email" id="assess-email" class="form-input" autocomplete="email" required />
+            </div>
+            <p class="assess-fineprint">I'll send your result and follow up personally. No spam, ever.</p>
+          </div>
+
+          <!-- RESULT / submitting -->
+          <div class="assess-step assess-result" data-step="4">
+            <span class="assess-result-mark">✦</span>
+            <h2 class="assess-question" id="assess-result-title">Your path is ready.</h2>
+            <p class="assess-note" id="assess-result-text">Taking you there now…</p>
+            <a href="#" id="assess-result-link" class="btn btn-dark" style="margin-top:8px;display:none">Continue →</a>
+          </div>
+
+          <!-- CONTROLS -->
+          <div class="assess-nav">
+            <button type="button" class="assess-back" id="assess-back" hidden>← Back</button>
+            <button type="submit" class="btn btn-dark assess-submit" id="assess-submit" hidden>See my path →</button>
+          </div>
         </div>
-        <div class="wid-col">
-          <span class="wid-accent"></span>
-          <h3>Community & Experience</h3>
-          <p>Building spaces and experiences that foster creativity, momentum, and meaningful relationships.</p>
-        </div>
-        <div class="wid-col">
-          <span class="wid-accent"></span>
-          <h3>Creative Direction</h3>
-          <p>Real estate, creator ecosystems, wellness, hospitality, storytelling, and modern entrepreneurship — connected through one worldview.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </form>
 
-  <!-- CURRENT PROJECTS -->
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Current Projects</p>
-      <h2 class="section-title" style="margin-bottom:48px">Active momentum.</h2>
-      <div class="projects-list">
-        <a href="https://sacredspacestudios.net" target="_blank" rel="noopener noreferrer" class="project-row">
-          <span class="project-name">Sacred Space Studios</span>
-          <span class="project-desc">Creator infrastructure + community in Tampa Bay</span>
-        </a>
-        <a href="/works" class="project-row">
-          <span class="project-name">The Works — Recruitment</span>
-          <span class="project-desc">Opportunities for women stepping into their power</span>
-        </a>
-        <a href="/ecosystem" class="project-row">
-          <span class="project-name">Client Success & Mastermind Ops</span>
-          <span class="project-desc">Strategic support for founders and creators</span>
-        </a>
-        <a href="/ecosystem" class="project-row">
-          <span class="project-name">Community Initiatives</span>
-          <span class="project-desc">Women's community, retreats, and gathering concepts</span>
-        </a>
-        <a href="/ecosystem" class="project-row">
-          <span class="project-name">Creative & Media Collaborations</span>
-          <span class="project-desc">Storytelling, music, and creative expression</span>
-        </a>
-        <a href="/works" class="project-row">
-          <span class="project-name">Website Design & Development</span>
-          <span class="project-desc">Building clean, modern sites for founders and brands</span>
-        </a>
-        <a href="/works" class="project-row">
-          <span class="project-name">GoHighLevel CRM Access</span>
-          <span class="project-desc">All-in-one CRM seats for managing and scaling your business</span>
-        </a>
-      </div>
-      <p class="projects-note">Some projects are active, some are evolving — all are connected through intentional environments and meaningful growth.</p>
-    </div>
-  </section>
-
-  <!-- START HERE FUNNEL -->
-  <section class="section section-white">
-    <div class="container" style="text-align:center">
-      <p class="eyebrow">Start Here</p>
-      <h2 class="section-title" style="margin-bottom:12px">Choose what brought you here.</h2>
-      <p class="section-sub section-sub-center">Not sure where to begin? Pick the path closest to what you're looking for.</p>
-      <div class="funnel-grid">
-        <a href="/works" class="funnel-card">
-          <p class="funnel-label">Opportunity</p>
-          <p class="funnel-title">Looking for offers & opportunities for women</p>
-        </a>
-        <a href="/ecosystem" class="funnel-card">
-          <p class="funnel-label">Projects</p>
-          <p class="funnel-title">Exploring current projects & ecosystem</p>
-        </a>
-        <a href="/blog" class="funnel-card">
-          <p class="funnel-label">Ideas</p>
-          <p class="funnel-title">Reading on growth, environment & creativity</p>
-        </a>
-        <a href="/contact" class="funnel-card">
-          <p class="funnel-label">Collaborate</p>
-          <p class="funnel-title">Interested in working together</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WRITING / IDEAS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <p class="eyebrow" style="margin-bottom:8px">Writing & Ideas</p>
-          <h2 class="section-title">Notes on growth, environment, creativity, and modern entrepreneurship.</h2>
-        </div>
-        <a href="/blog" class="link-muted">All posts</a>
-      </div>
-      <div id="home-posts">
-        <div class="skeleton-post"></div>
-        <div class="skeleton-post"></div>
-        <div class="skeleton-post"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="section section-dark">
-    <div class="newsletter-inner">
-      <p class="eyebrow eyebrow-gold">Stay Connected</p>
-      <h2 class="newsletter-title">Notes on the work</h2>
-      <p class="newsletter-sub">Occasional writing on environment, creative process, community, and building things that matter. No noise.</p>
-      <div class="newsletter-form" id="newsletter-form">
-        <label for="nl-email" class="sr-only">Email address</label>
-        <input type="email" id="nl-email" placeholder="your@email.com" class="nl-input" aria-label="Email address" />
-        <button onclick="subscribeNewsletter()" class="nl-btn">Subscribe</button>
-      </div>
+      <p class="assess-trust">Trusted starting point for women building careers, creative ventures, and new chapters across Tampa Bay and beyond.</p>
     </div>
   </section>
 
@@ -174,14 +165,7 @@
 
   <script src="/js/data.js"></script>
   <script src="/js/api.js"></script>
-  <script>
-    fetchPosts(3).then(posts => renderPostList('home-posts', posts));
-    renderFooter();
-    function subscribeNewsletter() {
-      const e = document.getElementById('nl-email').value;
-      if (!e) return;
-      document.getElementById('newsletter-form').innerHTML = '<p class="nl-thanks">You\'re in. Watch for something good. ✦</p>';
-    }
-  </script>
+  <script src="/js/assessment.js"></script>
+  <script>renderFooter();</script>
 </body>
 </html>

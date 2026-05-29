@@ -261,6 +261,62 @@ a.project-row:hover { opacity: 0.7; }
 /* Hero thesis */
 .hero-thesis { font-family: var(--ff); font-size: clamp(20px, 3vw, 28px); font-weight: 400; color: var(--muted); line-height: 1.5; letter-spacing: -0.01em; margin-bottom: 48px; max-width: 620px; }
 
+/* Financial Feminine Freedom Self-Assessment */
+.hero-assess { min-height: 100vh; justify-content: center; align-items: center; padding: 120px 32px 80px; }
+.assess-intro { max-width: 680px; text-align: center; margin: 0 auto 44px; }
+.assess-intro .hero-title { margin-bottom: 24px; }
+.assess-intro .hero-thesis { margin: 0 auto; font-size: clamp(18px, 2.4vw, 23px); }
+
+.assess-wrap { width: 100%; max-width: 620px; margin: 0 auto; }
+.assess-card { background: var(--white); border: 1px solid var(--border); padding: 40px; position: relative; box-shadow: 0 24px 60px -36px rgba(28,28,26,0.4); }
+
+.assess-progress { height: 3px; background: var(--border); margin: -40px -40px 36px; }
+.assess-progress-bar { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.4s ease; }
+
+.assess-step { display: none; }
+.assess-step.is-active { display: block; animation: assessFade 0.35s ease; }
+@keyframes assessFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.assess-step-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 14px; }
+.assess-question { font-family: var(--ff); font-size: clamp(22px, 3.4vw, 28px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 24px; }
+.assess-note { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 28px; }
+
+.assess-options { display: flex; flex-direction: column; gap: 12px; }
+.assess-option { text-align: left; background: var(--bg); border: 1px solid var(--border); padding: 18px 20px; cursor: pointer; transition: border-color 0.2s, background 0.2s, transform 0.1s; display: block; width: 100%; font-family: var(--ffs); }
+.assess-option:hover { border-color: var(--accent); background: rgba(196,168,130,0.07); }
+.assess-option:active { transform: scale(0.995); }
+.assess-option.is-selected { border-color: var(--accent-dark); background: rgba(196,168,130,0.14); }
+.assess-option-title { display: block; font-family: var(--ff); font-size: 18px; letter-spacing: -0.01em; margin-bottom: 4px; }
+.assess-option-sub { display: block; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
+
+.assess-field { margin-bottom: 24px; }
+.assess-fineprint { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin-top: 4px; }
+
+.assess-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 32px; }
+.assess-back { background: none; border: none; cursor: pointer; font-family: var(--ffs); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 6px 0; }
+.assess-back:hover { color: var(--ink); }
+.assess-submit { margin-left: auto; }
+
+.assess-result { text-align: center; padding: 16px 0; }
+.assess-result-mark { display: block; font-size: 30px; color: var(--accent); margin-bottom: 12px; }
+
+.assess-trust { text-align: center; font-size: 13px; color: var(--muted); line-height: 1.6; margin-top: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+.hp-field { position: absolute; left: -9999px; }
+
+/* Lifestyle Design page */
+.lifestyle-feature { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.lifestyle-media { display: block; background: linear-gradient(135deg, #D4C5B0, #F5F2ED); border: 1px solid var(--border); aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; overflow: hidden; transition: opacity 0.2s; }
+.lifestyle-media:hover { opacity: 0.9; }
+.lifestyle-media img { max-width: 78%; max-height: 80%; object-fit: contain; }
+.lifestyle-feature-body p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+
+@media (max-width: 768px) {
+  .hero-assess { padding: 100px 20px 60px; }
+  .assess-card { padding: 28px; }
+  .assess-progress { margin: -28px -28px 28px; }
+}
+
 @media (max-width: 768px) {
   .nav-links { gap: 16px; }
   .nav-link { font-size: 11px; }
@@ -275,4 +331,5 @@ a.project-row:hover { opacity: 0.7; }
   .project-desc { text-align: left; }
   .offers-grid { grid-template-columns: 1fr; }
   .cred-row { flex-direction: column; gap: 20px; }
+  .lifestyle-feature { grid-template-columns: 1fr; gap: 24px; }
 }

@@ -5,21 +5,21 @@
  * captures the lead through Netlify Forms (tagged with the segment), and
  * routes them to the matching funnel.
  *
+ *   Builder     → founder / sales team     → collaboration inquiry
  *   Catalyst    → career / remote income   → designfeminine.com
- *   Creator     → studios / wellness       → sacredspacestudios.net
  *   Relocation  → real estate / relocation → newyorkexitplan.com
  */
 (function () {
   var ROUTES = {
+    Builder: {
+      url: "/contact",
+      title: "Your path: The Leverage Path",
+      text: "You are ready to build a sales engine that no longer depends on your calendar. I’m taking you to the collaboration page so we can start with the right people, positioning, and system."
+    },
     Catalyst: {
       url: "https://designfeminine.com",
       title: "Your path: The Catalyst Path",
       text: "You're ready to build remote income on your own terms. I'm sending you to Design Feminine, where you can apply to the RTR Whitelabel client-success and sales team."
-    },
-    Creator: {
-      url: "https://sacredspacestudios.net",
-      title: "Your path: The Expansion Path",
-      text: "Your work needs a professional home. I'm sending you to Sacred Space Studios in Tampa Bay — book a studio tour or claim a founding membership."
     },
     Relocation: {
       url: "https://newyorkexitplan.com",
@@ -29,8 +29,8 @@
   };
 
   var SUMMARY = {
+    Builder: "Your answers point to a leverage path — a trusted sales team and a business that can grow without your constant presence.",
     Catalyst: "Your answers point to a career path — flexible, remote income you control.",
-    Creator: "Your answers point to a creative path — a professional home base for your work.",
     Relocation: "Your answers point to a relocation path — a tax-smart move and the right property."
   };
 
@@ -49,7 +49,7 @@
   var summaryEl = document.getElementById("assess-summary");
 
   var current = 0;
-  var scores = { Catalyst: 0, Creator: 0, Relocation: 0 };
+  var scores = { Builder: 0, Catalyst: 0, Relocation: 0 };
 
   function showStep(index) {
     current = index;
@@ -71,9 +71,9 @@
   }
 
   function topSegment() {
-    var best = "Catalyst";
+    var best = "Builder";
     var bestScore = -1;
-    ["Catalyst", "Creator", "Relocation"].forEach(function (seg) {
+    ["Builder", "Catalyst", "Relocation"].forEach(function (seg) {
       if (scores[seg] > bestScore) {
         bestScore = scores[seg];
         best = seg;

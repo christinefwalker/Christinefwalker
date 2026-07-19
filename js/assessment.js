@@ -1,37 +1,20 @@
 /*
- * Financial Feminine Freedom Self-Assessment
+ * Sales Team Readiness Assessment
  *
- * A 3-question diagnostic that sorts a visitor into one of three segments,
- * captures the lead through Netlify Forms (tagged with the segment), and
- * routes them to the matching funnel.
- *
- *   Builder     → founder / sales team     → collaboration inquiry
- *   Catalyst    → career / remote income   → designfeminine.com
- *   Relocation  → real estate / relocation → newyorkexitplan.com
+ * A 3-question diagnostic that qualifies a visitor for the flagship
+ * sales-team engagement and captures the lead through Netlify Forms.
  */
 (function () {
   var ROUTES = {
     Builder: {
-      url: "/contact",
-      title: "Your path: The Leverage Path",
-      text: "You are ready to build a sales engine that no longer depends on your calendar. I’m taking you to the collaboration page so we can start with the right people, positioning, and system."
-    },
-    Catalyst: {
-      url: "https://designfeminine.com",
-      title: "Your path: The Catalyst Path",
-      text: "You're ready to build remote income on your own terms. I'm sending you to Design Feminine, where you can apply to the RTR Whitelabel client-success and sales team."
-    },
-    Relocation: {
-      url: "https://newyorkexitplan.com",
-      title: "Your path: The Abundance Path",
-      text: "You're thinking about a smarter base for your life and investments. I'm sending you to the New York Exit Plan to start your tax-savings estimate and a coastal real estate consultation."
+      url: "/thank-you",
+      title: "Your sales-team snapshot is ready.",
+      text: "Christine reviews your answers personally and follows up within two business days. If the 90-day engagement fits, the next step is a 20-minute call."
     }
   };
 
   var SUMMARY = {
-    Builder: "Your answers point to a leverage path — a trusted sales team and a business that can grow without your constant presence.",
-    Catalyst: "Your answers point to a career path — flexible, remote income you control.",
-    Relocation: "Your answers point to a relocation path — a tax-smart move and the right property."
+    Builder: "Your answers create a quick snapshot of the sales constraint, current team stage, and 90-day outcome you want."
   };
 
   var TOTAL_QUESTIONS = 3; // steps 0,1,2 are questions; 3 is capture; 4 is result
@@ -49,7 +32,7 @@
   var summaryEl = document.getElementById("assess-summary");
 
   var current = 0;
-  var scores = { Builder: 0, Catalyst: 0, Relocation: 0 };
+  var scores = { Builder: 0 };
 
   function showStep(index) {
     current = index;
@@ -71,15 +54,7 @@
   }
 
   function topSegment() {
-    var best = "Builder";
-    var bestScore = -1;
-    ["Builder", "Catalyst", "Relocation"].forEach(function (seg) {
-      if (scores[seg] > bestScore) {
-        bestScore = scores[seg];
-        best = seg;
-      }
-    });
-    return best;
+    return "Builder";
   }
 
   // Answer selection
@@ -158,7 +133,7 @@
   });
 
   function route(seg) {
-    var dest = ROUTES[seg] || ROUTES.Catalyst;
+    var dest = ROUTES[seg] || ROUTES.Builder;
     var titleEl = document.getElementById("assess-result-title");
     var textEl = document.getElementById("assess-result-text");
     var linkEl = document.getElementById("assess-result-link");

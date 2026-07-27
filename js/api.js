@@ -5,7 +5,21 @@ function cleanText(str) {
   if (!str) return '';
   return str.replace(/&#8217;/g,"'").replace(/&#8220;/g,'\u201C').replace(/&#8221;/g,'\u201D')
     .replace(/&#8211;/g,'\u2013').replace(/&#8212;/g,'\u2014').replace(/&amp;/g,'&')
-    .replace(/&hellip;/g,'…').replace(/<[^>]+>/g,'').trim();
+    .replace(/&hellip;/g,'…').replace(/&nbsp;/g,' ').replace(/&#038;/g,'&')
+    .replace(/<[^>]+>/g,'').trim();
+}
+
+function escapeHTML(str) {
+  return String(str || '').replace(/[&<>'"]/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  })[character]);
+}
+
+function getPostImage(post) {
+  const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || post.jetpack_featured_media_url;
+  if (featuredImage) return featuredImage;
+  const contentImage = (post.content?.rendered || '').match(/<img[^>]+src=["']([^"']+)/i);
+  return contentImage?.[1] || '';
 }
 
 async function fetchPosts(count = 10) {
@@ -20,9 +34,58 @@ async function fetchPosts(count = 10) {
       content: p.content.rendered,
       date: new Date(p.date).toLocaleDateString('en-US',{month:'long',year:'numeric'}),
       tag: p._embedded?.['wp:term']?.[0]?.[0]?.name || 'Essay',
-      link: p.link
+      link: p.link,
+      image: getPostImage(p)
     }));
   } catch(e) { return { error: e.message }; }
+}
+
+function renderHomePosts(containerId, posts) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.setAttribute('aria-busy', 'false');
+
+  if (posts.error) {
+    container.innerHTML = `
+      <div class="journal-state">
+        <p class="editorial-kicker">The journal is taking a moment</p>
+        <h3>Articles couldn’t load right now.</h3>
+        <p>Visit the full journal to keep reading.</p>
+        <a class="editorial-text-link" href="/blog">Open the journal <span aria-hidden="true">→</span></a>
+      </div>`;
+    return;
+  }
+
+  if (!posts.length) {
+    container.innerHTML = `
+      <div class="journal-state">
+        <p class="editorial-kicker">More soon</p>
+        <h3>New writing is on the way.</h3>
+        <p>Explore the journal archive in the meantime.</p>
+        <a class="editorial-text-link" href="/blog">Browse the archive <span aria-hidden="true">→</span></a>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = posts.map((post, index) => {
+    const safeTitle = escapeHTML(post.title);
+    const safeExcerpt = escapeHTML(post.excerpt.slice(0, 150));
+    const safeLink = escapeHTML(post.link);
+    const imageMarkup = post.image
+      ? `<img src="${escapeHTML(post.image)}" alt="" loading="lazy" />`
+      : `<span class="journal-image-fallback" aria-hidden="true"><span>${String(index + 1).padStart(2, '0')}</span></span>`;
+
+    return `
+      <article class="journal-card">
+        <a class="journal-image" href="${safeLink}" target="_blank" rel="noopener noreferrer" aria-label="Read ${safeTitle}">
+          ${imageMarkup}
+        </a>
+        <p class="journal-meta">${escapeHTML(post.date)} · ${escapeHTML(post.tag)}</p>
+        <h3><a href="${safeLink}" target="_blank" rel="noopener noreferrer">${safeTitle}</a></h3>
+        <p>${safeExcerpt}${post.excerpt.length > 150 ? '…' : ''}</p>
+        <a class="journal-read-link" href="${safeLink}" target="_blank" rel="noopener noreferrer">Read article <span aria-hidden="true">→</span></a>
+      </article>`;
+  }).join('');
 }
 
 async function fetchPostBySlug(slug) {
@@ -48,10 +111,10 @@ function renderPostList(containerId, posts) {
   const el = document.getElementById(containerId);
   if (!el) return;
   if (posts.error) {
-    el.innerHTML = `<div class="error-note"><strong>Couldn't load posts:</strong> ${posts.error}</div>`;
+    el.innerHTML = '<div class="error-note"><strong>The journal couldn’t load right now.</strong> Refresh the page or try again soon.</div>';
     return;
   }
-  if (!posts.length) { el.innerHTML = '<p style="color:var(--muted)">No posts yet.</p>'; return; }
+  if (!posts.length) { el.innerHTML = '<p style="color:var(--muted)">New writing is on the way. Check back soon.</p>'; return; }
   el.innerHTML = posts.map(p => `
     <a href="/blog/post/?slug=${encodeURIComponent(p.slug)}" class="post-item">
       <div class="post-body">
@@ -96,7 +159,7 @@ function renderWorksGrid(containerId, limit) {
 function renderFooter() {
   const el = document.getElementById('footer-placeholder');
   if (!el) return;
-  const links = [['About','/about'],['The Works','/works'],['Ecosystem','/ecosystem'],['Lifestyle Design','/lifestyle'],['Writing','/blog'],['Collaborate','/contact'],['Start Here','/start'],['Privacy','/privacy'],['Disclosures','/disclosures']];
+  const links = [['Home','/'],['About','/about'],['Design','/lifestyle'],['Writing','/blog'],['Collaborate','/contact'],['Privacy','/privacy']];
   el.innerHTML = `
     <footer role="contentinfo">
       <div class="footer-inner">

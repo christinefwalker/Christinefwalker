@@ -17,42 +17,52 @@
     <div class="nav-links">
       <a href="/" class="nav-link">Home</a>
       <a href="/about" class="nav-link">About</a>
-      <a href="/lifestyle" class="nav-link">Lifestyle Design</a>
+      <a href="/lifestyle" class="nav-link">Design</a>
       <a href="/blog" class="nav-link">Writing</a>
       <a href="/contact" class="nav-link">Collaborate</a>
     </div>
   </div></nav>
   <main id="main-content">
-  <div style="padding:140px 32px 100px">
-    <div class="form-wrap">
-      <p class="eyebrow">Let's Begin</p>
-      <h1 class="page-title">Start Here</h1>
-      <p class="page-sub">Tell me about what you're building. I'll read every word and reply within 48 hours.</p>
+  <div class="start-page-shell">
+    <div class="start-page-intro">
+      <p class="eyebrow">Find the First Move</p>
+      <h1 class="page-title">Where is your time getting trapped?</h1>
+      <p class="page-sub">Share a few details about what you’re building, what is taking the most time, and the kind of support you need. I’ll help you identify a clear next step.</p>
+      <div class="start-page-note">
+        <p>Your answers can point toward a stronger team, a clearer system, or a better environment for the work ahead.</p>
+      </div>
+    </div>
+    <div class="start-page-form" id="project-form">
+      <p class="eyebrow">Start the Conversation</p>
+      <h2>Where should I send my reply?</h2>
       <form name="start-project" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
         <input type="hidden" name="form-name" value="start-project" />
         <input type="hidden" name="form-label" value="New Lead — Start a Project" />
         <p style="display:none"><label>Don't fill this: <input name="bot-field" /></label></p>
         <div class="form-field"><label class="form-label" for="start-name">Your name *</label><input type="text" name="name" id="start-name" class="form-input" required /></div>
         <div class="form-field"><label class="form-label" for="start-email">Email address *</label><input type="email" name="email" id="start-email" class="form-input" required /></div>
-        <div class="form-field"><label class="form-label" for="start-project">What are you working on? *</label><textarea name="project" id="start-project" class="form-textarea" rows="4" required></textarea></div>
+        <div class="form-field"><label class="form-label" for="start-project">What are you building? *</label><textarea name="project" id="start-project" class="form-textarea" rows="4" required></textarea></div>
+        <div class="form-field"><label class="form-label" for="start-time">What is taking the most time right now? *</label><textarea name="time-bottleneck" id="start-time" class="form-textarea" rows="3" required></textarea></div>
         <div class="form-field">
-          <label class="form-label" for="start-support">What kind of support?</label>
+          <label class="form-label" for="start-support">What kind of support are you exploring?</label>
           <select name="support" id="start-support" class="form-select">
             <option value="">Select…</option>
-            <option>Facilitation / Workshops</option>
+            <option>Sales team strategy</option>
+            <option>Workshops and facilitation</option>
             <option>Campaign strategy</option>
-            <option>Brand + community</option>
-            <option>Connector / matching</option>
+            <option>Brand and community strategy</option>
+            <option>Partnership introductions</option>
             <option>Not sure yet — let's talk</option>
           </select>
         </div>
         <div class="form-field"><label class="form-label" for="start-notes">Anything else?</label><textarea name="notes" id="start-notes" class="form-textarea" rows="3"></textarea></div>
-        <button type="submit" class="btn btn-dark btn-full">Send My Inquiry →</button>
+        <p class="form-helper">I’ll read your note and follow up personally within 48 hours.</p>
+        <button type="submit" class="btn btn-dark btn-full">Start the Conversation →</button>
       </form>
-      <div style="margin-top:72px">
+      <div class="start-next-steps">
         <h2 style="font-family:var(--ff);font-size:28px;font-weight:400;margin-bottom:40px">What happens next</h2>
-        <div class="next-step"><h3>01 — I read your note</h3><p>Within 48 hours. No auto-replies — just me.</p></div>
-        <div class="next-step"><h3>02 — We talk</h3><p>A 30-minute call if there's a fit. No pitch, no pressure.</p></div>
+        <div class="next-step"><h3>01 — I read your note</h3><p>I personally reply within 48 hours.</p></div>
+        <div class="next-step"><h3>02 — We talk</h3><p>If the project feels aligned, we’ll use a 30-minute call to clarify the opportunity.</p></div>
         <div class="next-step"><h3>03 — We build a plan</h3><p>A simple proposal — or an honest referral if I'm not the right fit.</p></div>
       </div>
     </div>

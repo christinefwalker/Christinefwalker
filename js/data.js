@@ -30,8 +30,8 @@ const WORKS = [
     heroColor: "linear-gradient(135deg, #BFC9D4, #D4C5E0, #F5F2ED)",
     cardImage: "/images/creator-clarity-card.svg",
     badge: "Free PDF",
-    desc: "A 15-question interview framework for extracting story, strategy, and positioning from entrepreneurs. Published through Squirrel Media.",
-    outcomes: ["15-question diagnostic framework","Problem → Story → Solution → Outcome arc","Free downloadable PDF for registrants","Built for podcasters, creators & facilitators"]
+    desc: "A 15-question interview guide for uncovering the story, customer problem, and point of view behind an entrepreneur's work. Published through Squirrel Media.",
+    outcomes: ["15 focused interview questions","A clear path from problem to outcome","Free printable guide","Built for podcasters, creators, and facilitators"]
   }
 ];
 
@@ -50,5 +50,5 @@ const QUESTIONS = [
   { n:"12", part:2, q:"Did you personally try other solutions before creating this one?", why:"Positions the guest as a qualified voice — not just a seller, but a seeker." },
   { n:"13", part:2, q:"How do your best customers first react to your solution?", why:"The emotional moment of transformation. Pure testimonial gold." },
   { n:"14", part:2, q:"How quickly do your best customers fully adopt your solution?", why:"Sets realistic expectations and reveals onboarding insight." },
-  { n:"15", part:2, q:"How long before your solution pays for itself?", why:"The ROI close. Answers the question every prospect is secretly asking." }
+  { n:"15", part:2, q:"How long before your solution pays for itself?", why:"Clarifies when a customer can expect the solution to repay its cost." }
 ];

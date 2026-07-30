@@ -96,7 +96,7 @@ function renderWorksGrid(containerId, limit) {
 function renderFooter() {
   const el = document.getElementById('footer-placeholder');
   if (!el) return;
-  const links = [['About','/about'],['The Works','/works'],['Ecosystem','/ecosystem'],['Lifestyle Design','/lifestyle'],['Writing','/blog'],['Collaborate','/contact'],['Start Here','/start'],['Privacy','/privacy'],['Disclosures','/disclosures']];
+  const links = [['About','/about'],['Writing','/blog'],['Work With Me','/#work-with-me'],['Connect','/contact'],['Privacy','/privacy'],['Disclosures','/privacy/disclosures']];
   el.innerHTML = `
     <footer role="contentinfo">
       <div class="footer-inner">

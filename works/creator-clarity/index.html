@@ -12,14 +12,12 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
-    <a href="/" class="nav-logo">Christine F. Walker</a>
-    <div class="nav-links">
-      <a href="/about" class="nav-link">About</a>
-      <a href="/blog" class="nav-link">Writing</a>
-      <a href="/#work-with-me" class="nav-link">Work With Me</a>
-      <a href="/contact" class="nav-link">Connect</a>
-    </div>
-  </div></nav>
+  <a href="/" class="nav-logo" aria-label="Christine home">Christine<span aria-hidden="true">.</span></a>
+  <div class="nav-links" id="nav-links">
+    <details class="problem-nav" id="problem-menu"><summary class="nav-link">Problems <span aria-hidden="true">↓</span></summary><div class="problem-nav-menu"><p class="problem-nav-heading">Start with what hurts.</p><a href="/cash-flow" class="nav-link">Business cash flow <span aria-hidden="true">↗</span></a></div></details>
+    <a href="/contact" class="nav-link">Tell Christine <span aria-hidden="true">↗</span></a>
+  </div>
+</div></nav>
 
   <main id="main-content">
     <div class="work-detail-hero" style="background:linear-gradient(135deg,#BFC9D4,#D4C5E0,#F5F2ED)">
@@ -63,6 +61,7 @@
           <p class="cc-card-sub">All 15 questions + strategic purpose. Print-ready. Yours instantly.</p>
           <form name="pdf-download" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin:0">
             <input type="hidden" name="form-name" value="pdf-download" />
+<input type="hidden" name="source_form" value="pdf-download" /><input type="hidden" name="submission_id" value="" /><input type="hidden" name="submitted_at" value="" />
             <input type="hidden" name="form-label" value="New Lead — PDF Download" />
             <p style="display:none"><label>Don't fill this: <input name="bot-field" /></label></p>
             <div class="form-field"><label class="form-label" for="pdf-name">Name *</label><input type="text" name="name" id="pdf-name" class="form-input" required /></div>
@@ -138,11 +137,9 @@
       const email = document.getElementById('pdf-email').value;
       if (!name || !email) return;
       // Submit to Netlify Forms for lead capture
-      const formData = new URLSearchParams();
-      formData.append('form-name', 'pdf-download');
-      formData.append('form-label', 'New Lead — PDF Download');
-      formData.append('name', name);
-      formData.append('email', email);
+      const form = document.querySelector('form[name="pdf-download"]');
+      if (!form.reportValidity()) return;
+      const formData = new URLSearchParams(new FormData(form));
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },

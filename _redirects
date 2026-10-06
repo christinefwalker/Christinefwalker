@@ -1,3 +1,25 @@
 /blog/post/    /blog/post/index.html    200
 /ecosystem     /ecosystem/index.html    200
-/*    /index.html   200
+/admin    /admin/index.html    200!    Role=admin
+/admin/    /admin/index.html    200!    Role=admin
+/admin/index.html    /admin/index.html    200!    Role=admin
+/admin/index    /admin/index.html    200!    Role=admin
+/admin/index/    /admin/index.html    200!    Role=admin
+/admin    /admin/login    302!
+/admin/    /admin/login    302!
+/admin/index.html    /admin/login    302!
+/admin/index    /admin/login    302!
+/admin/index/    /admin/login    302!
+/netlify/*    /404.html    404!
+/tests/*    /404.html    404!
+/test-results/*    /404.html    404!
+/playwright-report/*    /404.html    404!
+/node_modules/*    /404.html    404!
+/package.json    /404.html    404!
+/package-lock.json    /404.html    404!
+/tsconfig.json    /404.html    404!
+/playwright.config.mts    /404.html    404!
+/README.md    /404.html    404!
+/docs/*    /404.html    404!
+/js/vendor/README.md    /404.html    404!
+/*    /404.html    404

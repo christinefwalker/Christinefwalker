@@ -1,0 +1,17 @@
+#nav .problem-nav { position: relative; }
+#nav .problem-nav summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; }
+#nav .problem-nav summary::-webkit-details-marker { display: none; }
+#nav .problem-nav-menu { position: absolute; top: calc(100% + 20px); left: -22px; width: 240px; padding: 12px 20px; background: #f7f3eb; border: 1px solid #d9d0c5; z-index: 30; }
+#nav .problem-nav-menu a { display: flex; gap: 18px; justify-content: space-between; padding: 12px 0; min-height: 44px; color: #30231e; }
+#nav .problem-nav-heading { font-size: 11px; letter-spacing: .04em; line-height: 1.5; color: #746a5f; padding: 8px 0 4px; }
+#nav summary:focus-visible { outline: 2px solid #a14e37; outline-offset: 6px; }
+@media (max-width: 768px) {
+  #nav.nav-enhanced .nav-inner { min-height: 64px; height: 64px; flex-wrap: nowrap; padding-top: 0; padding-bottom: 0; }
+  #nav.nav-enhanced .nav-toggle { display: flex; flex-shrink: 0; }
+  #nav.nav-enhanced .nav-links { position: absolute; top: 64px; left: 0; right: 0; display: none; width: auto; flex-direction: column; align-items: stretch; padding: 12px 6vw 20px; gap: 0; background: #f7f3eb; border-bottom: 1px solid #d9d0c5; overflow: visible; }
+  #nav.nav-enhanced .nav-links.is-open { display: flex; }
+  #nav.nav-enhanced .nav-link { display: flex; padding: 16px 0; min-height: 48px; color: #30231e; white-space: normal; }
+  #nav.nav-enhanced .problem-nav-menu { position: static; width: 100%; border: 0; padding: 0 0 0 18px; }
+  .connector #nav.nav-enhanced .nav-inner { height: 76px; }
+  .connector #nav.nav-enhanced .nav-links { top: 76px; }
+}

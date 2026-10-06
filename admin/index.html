@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connector admin — Christine</title>
+  <meta name="description" content="Private Connector administration." />
+  <meta name="theme-color" content="#f7f3eb" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/connector.css" />
+  <script defer src="/js/api.js"></script>
+  <script type="module" src="/js/admin.js"></script>
+</head>
+<body class="connector">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
+  <a href="/" class="nav-logo" aria-label="Christine home">Christine<span aria-hidden="true">.</span></a>
+  <div class="nav-links" id="nav-links">
+    <details class="problem-nav" id="problem-menu"><summary class="nav-link">Problems <span aria-hidden="true">↓</span></summary><div class="problem-nav-menu"><p class="problem-nav-heading">Start with what hurts.</p><a href="/cash-flow" class="nav-link">Business cash flow <span aria-hidden="true">↗</span></a></div></details>
+    <a href="/contact" class="nav-link">Tell Christine <span aria-hidden="true">↗</span></a>
+  </div>
+</div></nav>
+  <main id="main-content">
+    <section class="connector-shell connector-admin"><div class="connector-admin-head"><div><p class="connector-eyebrow">Private / Christine’s connections</p><h1>The conversations.</h1></div><button type="button" class="connector-outline-button" id="admin-logout">Sign out</button></div>
+      <div id="admin-status" class="connector-loading" role="status">Loading your inquiries and referral clicks…</div>
+      <div id="admin-content" hidden><div class="connector-admin-counts"><div class="connector-admin-count"><span>Total inquiries</span><strong id="inquiry-count">—</strong></div><div class="connector-admin-count"><span>Total Fugio clicks</span><strong id="click-count">—</strong></div></div>
+        <h2>Inquiries</h2><p class="connector-admin-meta">Latest 50. Counts include all records.</p><ul id="inquiry-list" class="connector-admin-list"></ul>
+        <h2>Referral clicks</h2><p class="connector-admin-meta">Click-to-conversion attribution: <span>Not connected</span>. Referral clicks are not leads or conversions.</p><ul id="click-list" class="connector-admin-list"></ul>
+      </div>
+    </section></main>
+  <div id="footer-placeholder"></div>
+</body>
+</html>

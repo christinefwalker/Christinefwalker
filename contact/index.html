@@ -1,45 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connect — Christine F. Walker</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tell Christine — Where does it hurt?</title>
+  <meta name="description" content="Tell Christine what’s getting in your way. Start a conversation about your business problem—no financial information needed." />
+  <meta name="theme-color" content="#f7f3eb" />
+  <link rel="canonical" href="https://christinefwalker.com/contact" />
+  <meta property="og:title" content="Tell Christine — Where does it hurt?" />
+  <meta property="og:description" content="Tell Christine what’s getting in your way. Start a conversation about your business problem—no financial information needed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://christinefwalker.com/contact" />
   <link rel="stylesheet" href="/css/style.css" />
-  <!-- GoHighLevel / LeadConnector external tracking -->
-  <meta name="theme-color" content="#F5F2ED" />
-  <link rel="preconnect" href="https://link.msgsndr.com" crossorigin />
-  <script async src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_86ec30b65a8c466daa4af1b42eb26058"></script>
+  <link rel="stylesheet" href="/css/connector.css" />
+  <script defer src="/js/api.js"></script>
+  <script defer src="/js/connector.js"></script>
 </head>
-<body>
+<body class="connector">
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
-    <a href="/" class="nav-logo">Christine F. Walker</a>
-    <div class="nav-links">
-      <a href="/about" class="nav-link">About</a>
-      <a href="/blog" class="nav-link">Writing</a>
-      <a href="/#work-with-me" class="nav-link">Work With Me</a>
-      <a href="/contact" class="nav-link active" aria-current="page">Connect</a>
-    </div>
-  </div></nav>
-  <main id="main-content">
-  <div style="max-width:640px;margin:0 auto;padding:140px 32px 100px">
-    <p class="eyebrow">Connect</p>
-    <h1 class="page-title">Let's Connect</h1>
-    <p class="page-sub">For partnerships, collaborations, speaking, or anything that sparks alignment.</p>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="form-label" value="New Lead — General Contact" />
-      <p style="display:none"><label>Don't fill this: <input name="bot-field" /></label></p>
-      <div class="form-field"><label class="form-label" for="contact-name">Name *</label><input type="text" name="name" id="contact-name" class="form-input" required /></div>
-      <div class="form-field"><label class="form-label" for="contact-email">Email *</label><input type="email" name="email" id="contact-email" class="form-input" required /></div>
-      <div class="form-field"><label class="form-label" for="contact-message">Message *</label><textarea name="message" id="contact-message" class="form-textarea" rows="5" required></textarea></div>
-      <button type="submit" class="btn btn-dark btn-full">Send Message</button>
-    </form>
+  <a href="/" class="nav-logo" aria-label="Christine home">Christine<span aria-hidden="true">.</span></a>
+  <div class="nav-links" id="nav-links">
+    <details class="problem-nav" id="problem-menu"><summary class="nav-link">Problems <span aria-hidden="true">↓</span></summary><div class="problem-nav-menu"><p class="problem-nav-heading">Start with what hurts.</p><a href="/cash-flow" class="nav-link">Business cash flow <span aria-hidden="true">↗</span></a></div></details>
+    <a href="/contact" class="nav-link">Tell Christine <span aria-hidden="true">↗</span></a>
   </div>
+</div></nav>
+  <main id="main-content">
+    <div class="connector-contact-grid connector-shell"><section aria-labelledby="contact-title"><p class="connector-eyebrow">Start with the problem</p><h1 id="contact-title">WHERE DOES <br /><em>IT HURT?</em></h1><p class="connector-intro">Something isn’t working. You don’t have to know the fix.<br />Tell me what’s going on, and we’ll start there.</p><p class="connector-form-note">Keep it to the problem. Please don’t include bank, credit, Social Security, tax, or funding information, account numbers, or sensitive documents.</p></section>
+      <div>
+        <form id="tell-christine-form" class="connector-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+          <input type="hidden" name="form-name" value="contact" /><input type="hidden" name="form-label" value="Tell Christine — Problem inquiry" /><input type="hidden" name="source_form" value="contact" /><input type="hidden" name="submission_id" value="" /><input type="hidden" name="submitted_at" value="" /><input type="hidden" name="message" value="" />
+          <input type="hidden" name="intake_version" value="2" />
+          <p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="connector-form-grid"><div class="connector-field"><label for="contact-name">Your name *</label><input id="contact-name" name="name" autocomplete="name" required maxlength="120" /></div><div class="connector-field"><label for="contact-email">Email *</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" /></div></div>
+          <div class="connector-field"><label for="contact-problem">What’s the problem? *</label><textarea id="contact-problem" name="problem" required maxlength="3000" rows="5" aria-describedby="problem-hint"></textarea><p id="problem-hint" class="connector-form-note">Just the problem. No financial data, please.</p></div>
+          <div class="connector-form-grid"><div class="connector-field"><label for="contact-business">Business name <span>(optional)</span></label><input id="contact-business" name="business_name" autocomplete="organization" maxlength="180" /></div><div class="connector-field"><label for="contact-phone">Phone *</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" required pattern=".*\S.*" maxlength="40" /></div></div>
+          <label class="connector-consent"><input type="checkbox" name="follow_up_consent" value="yes" required /><span>Christine may follow up about my inquiry using the contact information I provide.</span></label>
+          <p id="form-status" class="connector-form-status" role="status" tabindex="-1"></p>
+          <button type="submit" class="connector-button">Tell Christine <span aria-hidden="true">↗</span></button><p class="connector-form-note">Your inquiry is stored securely and may be managed in Christine’s CRM. <a href="/privacy">How your information is used</a>.</p>
+        </form>
+        <section id="contact-success" class="connector-success" hidden tabindex="-1" aria-labelledby="success-title"><p class="connector-eyebrow">Message received</p><h2 id="success-title">Good. Let’s start there.</h2><p>Your message is with Christine. She can follow up using the details you shared.</p><a class="connector-text-link" href="/">Back to Christine <span aria-hidden="true">→</span></a></section>
+      </div>
+    </div>
+    <section id="about" class="connector-about" aria-labelledby="about-title"><div class="connector-section connector-shell connector-section-grid">
+      <p class="connector-eyebrow">02 / A little about Christine</p><div>
+        <h2 id="about-title">Knowing who to call<br /><em>changes things.</em></h2>
+        <div class="connector-body-copy"><p>My background spans hospitality, real estate, and community building. The common thread is people: understanding what they’re trying to do and connecting them with someone who may help.</p><p>I believe conversation creates clarity, and the right people can change the pace of a project.</p></div>
+        <p class="connector-about-detail">Based in St. Petersburg. Built on conversation.</p>
+      </div>
+    </div></section>
   </main>
   <div id="footer-placeholder"></div>
-  <script src="/js/data.js"></script>
-  <script src="/js/api.js"></script>
-  <script>renderFooter();</script>
 </body>
 </html>

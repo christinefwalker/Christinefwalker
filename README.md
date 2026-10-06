@@ -1,4 +1,11 @@
-# Coachingbridge
+# Christine — The Connector
+
+The current site is a static Netlify Connector MVP: problem → Christine → connection → solution. Cash flow is the only problem page, and Fugio is the only referral partner. Existing personal-brand pages, blogs, and forms remain accessible.
+
+See [Connector setup and acceptance checks](docs/connector-setup.md) for deployment, admin invitations, CRM behavior, the Fugio webhook, and the MVP stop point.
+
+## Original personal-brand brief (retained for context)
+
 christinefwalker site
 Netlify AI Prompt – Site Structure for christinefwalker.com
 

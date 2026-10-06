@@ -1,36 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy — Christine F. Walker</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy — Christine Walker</title>
+  <meta name="description" content="How Christine’s site uses inquiry information, referral tracking, optional analytics, and CRM services." />
+  <meta name="theme-color" content="#f7f3eb" />
+  <link rel="canonical" href="https://christinefwalker.com/privacy" />
+  <meta property="og:title" content="Privacy — Christine Walker" />
+  <meta property="og:description" content="How Christine’s site uses inquiry information, referral tracking, optional analytics, and CRM services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://christinefwalker.com/privacy" />
   <link rel="stylesheet" href="/css/style.css" />
-  <!-- GoHighLevel / LeadConnector external tracking -->
-  <meta name="theme-color" content="#F5F2ED" />
-  <link rel="preconnect" href="https://link.msgsndr.com" crossorigin />
-  <script async src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_86ec30b65a8c466daa4af1b42eb26058"></script>
+  <link rel="stylesheet" href="/css/connector.css" />
+  <script defer src="/js/api.js"></script>
+  <script defer src="/js/connector.js"></script>
 </head>
-<body>
+<body class="connector">
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
-    <a href="/" class="nav-logo">Christine F. Walker</a>
-    <div class="nav-links">
-      <a href="/about" class="nav-link">About</a>
-      <a href="/blog" class="nav-link">Writing</a>
-      <a href="/#work-with-me" class="nav-link">Work With Me</a>
-      <a href="/contact" class="nav-link">Connect</a>
-    </div>
-  </div></nav>
-  <main id="main-content">
-  <div class="simple-page">
-    <h1>Privacy Policy</h1>
-    <p>This site collects minimal information — only what you voluntarily submit through forms. Your data is never sold or shared with third parties. Form submissions are processed via Netlify Forms.</p>
-    <p>For questions, contact me directly via the <a href="/contact" style="text-decoration:underline">contact page</a>.</p>
+  <a href="/" class="nav-logo" aria-label="Christine home">Christine<span aria-hidden="true">.</span></a>
+  <div class="nav-links" id="nav-links">
+    <details class="problem-nav" id="problem-menu"><summary class="nav-link">Problems <span aria-hidden="true">↓</span></summary><div class="problem-nav-menu"><p class="problem-nav-heading">Start with what hurts.</p><a href="/cash-flow" class="nav-link">Business cash flow <span aria-hidden="true">↗</span></a></div></details>
+    <a href="/contact" class="nav-link">Tell Christine <span aria-hidden="true">↗</span></a>
   </div>
-  </main>
+</div></nav>
+  <main id="main-content">
+    <article class="connector-shell connector-policy"><p class="connector-eyebrow">The details / Updated October 6, 2026</p><h1>Privacy, plainly.</h1><p>This site is here to make connections—not build a dossier. Here’s what is collected and where it goes.</p>
+      <h2>What you tell Christine</h2><p>The contact form requires your name, email, phone, problem description, and permission to follow up. Business name is optional. Don’t send bank, credit, Social Security, tax, or funding information, account numbers, or sensitive documents. Existing project and download forms remain available and collect the information shown on those forms.</p><p>Netlify Forms processes submissions and applies spam filtering. Inquiry records and their follow-up status are stored in Netlify’s managed Postgres database, separately from referral click records. Existing legacy-form archives may also remain in Netlify Blobs. Access to the Connector admin and its data requires an authorized administrator account.</p>
+      <h2>Follow-up and the CRM</h2><p>Christine uses your information to understand and respond to your inquiry. When the existing GoHighLevel integration is configured, form information is forwarded to that CRM to support follow-up. GoHighLevel API contact records include your name, email, optional phone, and source/segment tags; an enabled workflow webhook may also receive the inquiry details.</p><p>Your information is not sold. It may be processed by Netlify and the configured CRM services for the purposes described here. A message to Christine is not automatically submitted to Fugio and is not consent to receive texts from Fugio.</p>
+      <h2>Referral clicks</h2><p>When you follow the funding connection, this site records a referral click before redirecting you to Fugio. The record includes a random click identifier, timestamp, random session identifier, source, limited campaign labels, landing-page path, problem, button placement, and referral destination. We do not store your IP address, full referrer URL, or contact details in these click records. Netlify may process technical request information to operate and secure the site.</p><p>Session storage remembers your landing page and campaign context during this visit. The redirect sets a first-party session cookie for referral attribution. These are used for the connection journey, not advertising profiles. Campaign links should never contain personal information. Christine may earn a commission from affiliate referrals.</p>
+      <h2>Optional analytics</h2><p>On the Connector pages, first-party page and solution views are recorded only if you choose “Allow analytics.” Your preference is kept in local storage. Declining does not prevent you from contacting Christine or following a referral.</p><p>Some preserved legacy pages still use GoHighLevel’s external tracking script, which may process technical visit information and use its own identifiers. Those scripts are not loaded on the new homepage, cash-flow page, contact page, or this privacy page.</p><button class="connector-outline-button" type="button" data-privacy-choices>Change optional analytics preference</button>
+      <h2>After you leave this site</h2><p>Fugio handles information you submit on its own site under its own privacy policies. The referral URL identifies Christine’s affiliate relationship. When the verified webhook integration is configured, Fugio can send partner referral-status or commission-event notifications. This site stores event identifiers, timestamps, partner/submission references and relevant statuses—not raw payloads, client contact details, or financial documents. We do not claim to match a partner update to an individual referral click without a supported identifier.</p>
+      <h2>Questions and requests</h2><p>To request access, correction, or deletion of your inquiry information, <a href="/contact">contact Christine</a>. Information is kept only as needed for follow-up, referral records, and legitimate business obligations; deletion requests are reviewed across the applicable submission and CRM systems.</p>
+    </article></main>
   <div id="footer-placeholder"></div>
-  <script src="/js/data.js"></script>
-  <script src="/js/api.js"></script>
-  <script>renderFooter();</script>
 </body>
 </html>

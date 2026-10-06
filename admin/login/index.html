@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin sign in — Christine</title>
+  <meta name="description" content="Invite-only administrator access." />
+  <meta name="theme-color" content="#f7f3eb" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/connector.css" />
+  <script defer src="/js/api.js"></script>
+  <script type="module" src="/js/admin-login.js"></script>
+</head>
+<body class="connector">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
+  <a href="/" class="nav-logo" aria-label="Christine home">Christine<span aria-hidden="true">.</span></a>
+  <div class="nav-links" id="nav-links">
+    <details class="problem-nav" id="problem-menu"><summary class="nav-link">Problems <span aria-hidden="true">↓</span></summary><div class="problem-nav-menu"><p class="problem-nav-heading">Start with what hurts.</p><a href="/cash-flow" class="nav-link">Business cash flow <span aria-hidden="true">↗</span></a></div></details>
+    <a href="/contact" class="nav-link">Tell Christine <span aria-hidden="true">↗</span></a>
+  </div>
+</div></nav>
+  <main id="main-content">
+    <section class="connector-shell connector-login"><p class="connector-eyebrow">Private / Invite only</p><h1 id="login-title">Just Christine.<br />And her people.</h1><p id="login-description">Sign in with your invited administrator account.</p><form id="admin-login-form" class="connector-form"><div class="connector-field" id="login-email-field"><label for="admin-email">Email</label><input id="admin-email" type="email" autocomplete="username" required /></div><div class="connector-field"><label for="admin-password" id="password-label">Password</label><input id="admin-password" type="password" autocomplete="current-password" required /></div><p id="login-status" class="connector-form-status" role="status"></p><button type="submit" class="connector-button" id="login-submit">Sign in <span aria-hidden="true">→</span></button></form></section></main>
+  <div id="footer-placeholder"></div>
+</body>
+</html>

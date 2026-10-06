@@ -1,5 +1,7 @@
 
 
+@import url('/css/navigation.css');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -194,6 +196,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .next-step h3 { font-family: var(--ff); font-size: 18px; font-weight: 400; margin-bottom: 8px; }
 .next-step p { color: var(--muted); font-size: 15px; line-height: 1.7; }
 
+.site-signoff { background: var(--bg); padding: 38px 6vw; border-top: 1px solid var(--border); }
+.site-signoff-inner { max-width: 1100px; margin: auto; }
+.site-signoff-context { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
+.site-signoff-link { display: inline-flex; align-items: center; gap: 18px; min-height: 48px; padding: 13px 18px; border: 1px solid #30231e; border-radius: 3px; color: #30231e; font-size: 14px; line-height: 1.5; text-decoration: none; }
+.site-signoff-link:hover { background: #30231e; color: #f7f3eb; }
+.site-signoff-link span { flex-shrink: 0; }
 footer { background: var(--white); border-top: 1px solid var(--border); padding: 48px 32px; }
 .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
 .footer-logo { font-family: var(--ff); font-size: 16px; }

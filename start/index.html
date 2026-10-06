@@ -13,14 +13,12 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav id="nav" aria-label="Main navigation"><div class="nav-inner">
-    <a href="/" class="nav-logo">Christine F. Walker</a>
-    <div class="nav-links">
-      <a href="/about" class="nav-link">About</a>
-      <a href="/blog" class="nav-link">Writing</a>
-      <a href="/#work-with-me" class="nav-link">Work With Me</a>
-      <a href="/contact" class="nav-link">Connect</a>
-    </div>
-  </div></nav>
+  <a href="/" class="nav-logo" aria-label="Christine home">Christine<span aria-hidden="true">.</span></a>
+  <div class="nav-links" id="nav-links">
+    <details class="problem-nav" id="problem-menu"><summary class="nav-link">Problems <span aria-hidden="true">↓</span></summary><div class="problem-nav-menu"><p class="problem-nav-heading">Start with what hurts.</p><a href="/cash-flow" class="nav-link">Business cash flow <span aria-hidden="true">↗</span></a></div></details>
+    <a href="/contact" class="nav-link">Tell Christine <span aria-hidden="true">↗</span></a>
+  </div>
+</div></nav>
   <main id="main-content">
   <div style="padding:140px 32px 100px">
     <div class="form-wrap">
@@ -29,6 +27,7 @@
       <p class="page-sub">Tell me about what you're building. I'll read every word and reply within 48 hours.</p>
       <form name="start-project" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
         <input type="hidden" name="form-name" value="start-project" />
+<input type="hidden" name="source_form" value="start-project" /><input type="hidden" name="submission_id" value="" /><input type="hidden" name="submitted_at" value="" />
         <input type="hidden" name="form-label" value="New Lead — Start a Project" />
         <p style="display:none"><label>Don't fill this: <input name="bot-field" /></label></p>
         <div class="form-field"><label class="form-label" for="start-name">Your name *</label><input type="text" name="name" id="start-name" class="form-input" required /></div>

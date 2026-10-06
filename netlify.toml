@@ -1,3 +1,24 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/admin"
+  [headers.values]
+    Cache-Control = "no-store, private"
+    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "DENY"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-store, private"
+    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "DENY"

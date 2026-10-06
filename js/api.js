@@ -96,11 +96,14 @@ function renderWorksGrid(containerId, limit) {
 function renderFooter() {
   const el = document.getElementById('footer-placeholder');
   if (!el) return;
-  const links = [['About','/about'],['Writing','/blog'],['Work With Me','/#work-with-me'],['Connect','/contact'],['Privacy','/privacy'],['Disclosures','/privacy/disclosures']];
+  const links = [['About','/contact#about'],['Tell Christine','/contact'],['Privacy','/privacy'],['Disclosures','/privacy/disclosures']];
+  const context = el.dataset.signoffContext === 'cash-flow' ? '<p class="site-signoff-context">Not a cash-flow problem?</p>' : '';
+  const signoffArrow = document.body.classList.contains('connector-home') ? '↗' : '→';
   el.innerHTML = `
-    <footer role="contentinfo">
+    <section class="site-signoff" aria-label="Start a conversation"><div class="site-signoff-inner">${context}<a class="site-signoff-link" href="/contact">Tell Christine where it hurts <span aria-hidden="true">${signoffArrow}</span></a></div></section>
+    <footer role="contentinfo" class="connector-footer">
       <div class="footer-inner">
-        <span class="footer-logo">Christine F. Walker</span>
+        <a href="/" class="footer-logo">Christine.</a>
         <nav aria-label="Footer navigation" class="footer-links">
           ${links.map(([l,p])=>`<a href="${p}" class="footer-link">${l}</a>`).join('')}
         </nav>
@@ -170,20 +173,53 @@ function initMobileNav() {
   toggle.setAttribute('aria-controls', links.id);
   toggle.innerHTML = '<span></span><span></span><span></span>';
   inner.appendChild(toggle);
+  nav.classList.add('nav-enhanced');
 
   const setOpen = open => {
     links.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   };
 
+  const problemNav = nav.querySelector('.problem-nav');
+
   toggle.addEventListener('click', () => setOpen(!links.classList.contains('is-open')));
-  links.addEventListener('click', e => { if (e.target.closest('.nav-link')) setOpen(false); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+  links.addEventListener('click', event => {
+    if (event.target.closest('a')) {
+      setOpen(false);
+      if (problemNav) problemNav.open = false;
+    }
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    if (problemNav?.open) {
+      problemNav.open = false;
+      problemNav.querySelector('summary').focus();
+    }
+    else if (links.classList.contains('is-open')) { setOpen(false); toggle.focus(); }
+  });
+  document.addEventListener('click', event => {
+    if (!nav.contains(event.target)) {
+      setOpen(false);
+      if (problemNav) problemNav.open = false;
+    }
+  });
   window.addEventListener('resize', () => { if (window.innerWidth > 768) setOpen(false); });
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initMobileNav);
-} else {
+function initSite() {
+  if (/^#.*(?:invite_token|recovery_token|confirmation_token)=/.test(location.hash) && !location.pathname.startsWith('/admin/login')) {
+    location.replace('/admin/login' + location.hash);
+    return;
+  }
   initMobileNav();
+  renderFooter();
+  for (const form of document.querySelectorAll('form[data-netlify]')) {
+    const identifier = form.querySelector('[name="submission_id"]');
+    const timestamp = form.querySelector('[name="submitted_at"]');
+    if (identifier && !identifier.value) identifier.value = crypto.randomUUID();
+    if (timestamp && !timestamp.value) timestamp.value = new Date().toISOString();
+  }
 }
+
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSite);
+else initSite();
